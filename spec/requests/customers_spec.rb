@@ -68,7 +68,7 @@ RSpec.describe "CustomersControllers", type: :request do
     it "updates an entry and redirects to the show path for the customer" do
       customer = FactoryBot.create(:customer)
       customer_attributes = FactoryBot.attributes_for(:customer)
-      customer_attributes.update
+      # customer_attributes.update
       expect { put customer_path(id: customer.id), params: {customer: customer_attributes}
     }.to_not change(Customer, :count)
       expect(response).to redirect_to customer_path(id: customer.id)
@@ -79,7 +79,7 @@ RSpec.describe "CustomersControllers", type: :request do
     it "does not update the customer record or redirect" do
       customer = FactoryBot.create(:customer)
       customer_attributes = FactoryBot.attributes_for(:customer)
-      customer_attributes.update
+      # customer_attributes.update
       customer_attributes.delete(:first_name)
       expect { put customer_path(id: customer.id), params: {customer: customer_attributes}
       }.to_not change(Customer, :count)

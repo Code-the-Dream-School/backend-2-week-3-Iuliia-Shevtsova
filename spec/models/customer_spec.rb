@@ -32,7 +32,9 @@ RSpec.describe Customer, type: :model do
   
   it "is not valid if the phone number is not 10 chars" do #????????
     # "is valid if the phone number is 10 chars"
-    expect(subject.phone.length).to be(10)
+    subject.phone='01234567890'
+    expect(subject).to_not be_valid
+    # expect(subject.phone.length).to be(10)
   end
 
   it "is not valid if the phone number is not all digits" do 
@@ -41,7 +43,7 @@ RSpec.describe Customer, type: :model do
 
     expect(subject.phone).to_not be_a_kind_of(Integer)
   end
-
+ 
   it "is not valid if the email address doesn't have a @" do #?????????
     # "is valid if the email address have a @"
     expect(subject.email).to include('@')
