@@ -8,10 +8,11 @@ class CustomersController < ApplicationController
   def index
     @customers = Customer.all
   end
-
+ 
   # GET /customers/1
   # GET /customers/1.json
   def show
+    # @customer = Customer.find(params[:id])
   end
 
   # GET /customers/new
@@ -21,6 +22,7 @@ class CustomersController < ApplicationController
 
   # GET /customers/1/edit
   def edit
+    # @customer = Customer.find(params[:id])
   end
 
   # POST /customers
@@ -51,6 +53,8 @@ class CustomersController < ApplicationController
     # flash.notice = "The customer record was updated successfully."
     # redirect_to @customer
 
+    # @customer = Customer.find(params[:id])
+
     respond_to do |format|
       if @customer.update(customer_params)
         format.html { redirect_to @customer, notice: 'Customer was successfully updated.' }
@@ -65,6 +69,8 @@ class CustomersController < ApplicationController
   # DELETE /customers/1
   # DELETE /customers/1.json
   def destroy
+    # @customer = Customer.find(params[:id])
+    
     @customer.destroy
     respond_to do |format|
       format.html { redirect_to customers_url, notice: 'Customer was successfully destroyed.' }

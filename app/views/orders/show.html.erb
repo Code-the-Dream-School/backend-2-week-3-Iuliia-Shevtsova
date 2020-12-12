@@ -1,0 +1,16 @@
+ <p id="notice"><%= notice %></p> 
+
+ <p>
+  <strong>Order name:</strong>
+  <%= @order.product_name %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @order.product_count %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<!-- request.referer allows Back to the previous page where Show was called-->
+<%= link_to 'Back', request.referer %> 
+ 

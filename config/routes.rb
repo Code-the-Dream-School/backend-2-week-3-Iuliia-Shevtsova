@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'customers#index' #This will configure the server to bring up this page when you connect to the root path.
-  # resources :orders
+  resources :orders
   resources :customers
 
   resources :customers do
